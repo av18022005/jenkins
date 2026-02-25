@@ -3,9 +3,10 @@ pipeline {
 
     stages {
         stage('Build Docker Image') {
-            steps {
-                bat 'docker build -t python-app .'
-            }
+    steps {
+        bat 'docker build --no-cache -t python-app .'
+    }
+}
         }
 
         stage('Run Tests Inside Docker') {
