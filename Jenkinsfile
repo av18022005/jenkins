@@ -2,11 +2,11 @@ pipeline {
     agent any
 
     stages {
+
         stage('Build Docker Image') {
-    steps {
-        bat 'docker build --no-cache -t python-app .'
-    }
-}
+            steps {
+                bat 'docker build --no-cache -t python-app .'
+            }
         }
 
         stage('Run Tests Inside Docker') {
@@ -20,5 +20,6 @@ pipeline {
                 bat 'docker run --rm python-app'
             }
         }
+
     }
 }
